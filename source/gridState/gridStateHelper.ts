@@ -8,7 +8,7 @@ export class GridStateHelper {
         const r: IGridState = {
             columnState: columnApi.getColumnState(),
             columnGroupState: columnApi.getColumnGroupState(),
-            sortModel: gridApi.getSortModel(),
+            sortModel: [],  // gridApi.getSortModel(),
             filterModel: gridApi.getFilterModel()
         };
 
@@ -19,7 +19,7 @@ export class GridStateHelper {
     static setState(gridApi: GridApi, columnApi: ColumnApi, gridState: IGridState) {
         columnApi.setColumnState(gridState.columnState);
         columnApi.setColumnGroupState(gridState.columnGroupState);
-        gridApi.setSortModel(gridState.sortModel);
+        // gridApi.setSortModel(gridState.sortModel);
         gridApi.setFilterModel(gridState.filterModel);
     }
 
@@ -27,7 +27,7 @@ export class GridStateHelper {
     static resetState(gridApi: GridApi, columnApi: ColumnApi) {
         columnApi.resetColumnState();
         columnApi.resetColumnGroupState();
-        gridApi.setSortModel(null);
+        // gridApi.setSortModel(null);
         gridApi.setFilterModel(null);
     }
 }
